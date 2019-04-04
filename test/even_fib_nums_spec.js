@@ -16,11 +16,11 @@ describe( 'Sum of even numbers in the Fibonnacci sequence', function() {
 
   // when the 2 tests pass, unskip the next test and
   // change the expected value to the correct result
-  it.skip( 'should return the sum of all even Fibonacci numbers when given 4,000,000', function() {
+  it( 'should return the sum of all even Fibonacci numbers when given 4,000,000', function() {
     var sum = fibonnaciNums.sumFibs(4000000);
 
     // CHANGE THE VALUE OF 'X' to the correct number
-    sum.should.equal( 'X' );
+    sum.should.equal( 4613732 );
   });
 });
 
@@ -33,7 +33,7 @@ describe( 'Sum of even numbers in the Fibonnacci sequence', function() {
  */
 
 // unskip the following test to test your highestFibonacciNumber() function
-describe.skip( 'Highest number in Fibonacci sequence', function() {
+describe( 'Highest number in Fibonacci sequence', function() {
   it( 'should return the highest Fibonacci number less than the given input', function() {
     var highest = fibonnaciNums.highestFibonacciNumber( 100 );
     highest.should.equal( 89 );
@@ -42,3 +42,9 @@ describe.skip( 'Highest number in Fibonacci sequence', function() {
 
 
 //STRETCH GOALS: Define another way you could write a function for a fibonacci number and write passing tests
+describe('Sum of odd numbers in the Fibonacci sequence', function(){
+  it('should return the sum of all odd Fibonacci numbers when given 13', function(){
+    var sum = fibonacciNums.oddFibs( 13 );
+    sum.should.equal(9);
+  });
+});

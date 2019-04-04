@@ -7,8 +7,27 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
+  var fibArray = [1,2];
+  function fibMaker(){
+    var fib1 = 1;
+    var fib2 = 2;
+    
+    var fibonacci = fib1 +fib2;
+    while(fibonacci<maxFibValue){
+      fibonacci= fib1 + fib2;
+      fib1 = fib2;
+      fib2 = fibonacci;
+      fibArray.push(fibonacci)
+    }
+    return fibArray
+  }
+fibMaker()
 
-  // do your work here
+  for(i=0;i<fibArray.length;i++){
+    if(fibArray[i]%2===0){
+      sum+=fibArray[i]
+    }
+  }
 
   return sum;
 }
@@ -20,16 +39,62 @@ function _highestFibonacciNumber (maxFibValue){
   //define your base case, validate your input
 
 
-  //do your work here
+  var fibArray = [1,2];
+  function fibMaker(){
+    var fib1 = 1;
+    var fib2 = 2;
+    
+    var fibonacci = fib1 +fib2;
+    while(fibonacci<=maxFibValue){
+      fibonacci= fib1 + fib2;
+      fib1 = fib2;
+      fib2 = fibonacci;
+      fibArray.push(fibonacci)
+    }
+    return fibArray
+  }
+  fibMaker()
+  for(i=0;i<fibArray.length;i++){
+    if(fibArray[i]<maxFibValue){
+      highest=fibArray[i]
+    }
+  }
 
   return highest;
 };
 
+
+function _oddFibs(maxFibValue){
+  var sum = 0;
+  var fibArray = [1,2];
+  function fibMaker(){
+    var fib1 = 1;
+    var fib2 = 2;
+    
+    var fibonacci = fib1 +fib2;
+    while(fibonacci<=maxFibValue){
+      fibonacci= fib1 + fib2;
+      fib1 = fib2;
+      fib2 = fibonacci;
+      fibArray.push(fibonacci)
+    }
+    return fibArray
+}
+fibMaker();
+for(i=0;i<fibArray.length;i++){
+  if(fibArray[i]%2===1){
+    sum+=fibArray[i]
+  }
+  return sum;
+}
+
+}
 /**
  * Do not modify code below.
  * You must be at least level 10 to understand.
  */
 module.exports = {
   sumFibs : _sumFibs,
-  highestFibonacciNumber : _highestFibonacciNumber
+  highestFibonacciNumber : _highestFibonacciNumber,
+  oddFibs: _oddFibs
 };
